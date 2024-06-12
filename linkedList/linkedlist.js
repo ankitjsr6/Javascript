@@ -12,7 +12,7 @@ class LinkedList {
     }
 }
 
-//insert at start
+// insert at start
 LinkedList.prototype.insertAtBeginning = function (data) {
     //create new Node
     const newNode = new Node(data);
@@ -21,7 +21,7 @@ LinkedList.prototype.insertAtBeginning = function (data) {
 }
 
 
-//insert at end
+// insert at end
 LinkedList.prototype.insertAtEnd = function (data) {
     const newNode = new Node(data)
 
@@ -37,5 +37,18 @@ LinkedList.prototype.insertAtEnd = function (data) {
         last = last.next;
     }
     last.next = newNode;
+
+}
+
+// insert at any given node
+LinkedList.prototype.insertAtAnyGivenNode = function (data, prevNode) {
+
+    // we copy the address of next of previous node to newNode and then point prevNode.next to newNode
+    if (prevNode.next == null) {
+        return "Incorrect prev node"
+    }
+
+    const newNode = new Node(data, prevNode.next)
+    prevNode.next = newNode;
 
 }
