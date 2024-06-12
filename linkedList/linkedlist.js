@@ -52,3 +52,30 @@ LinkedList.prototype.insertAtAnyGivenNode = function (data, prevNode) {
     prevNode.next = newNode;
 
 }
+
+// delete first node/head
+
+LinkedList.prototype.deleteFirstNode = function () {
+    if (!this.head) {
+        return;
+    }
+    this.head = this.head.next;
+}
+
+// delete last node
+LinkedList.prototype.deleteLastNode = function () {
+    if (!this.head) {
+        return; // list is empty
+    }
+    if (!this.head.next.next) {
+        this.head.next = null; // only one node is present
+        return;
+    }
+
+    // find out the second last element and then make its pointer null.
+    let secondlast = this.head;
+    while (secondlast.next.next) {
+        secondlast = secondlast.next
+    }
+    secondlast.next = null;
+}
