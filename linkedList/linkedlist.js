@@ -79,3 +79,22 @@ LinkedList.prototype.deleteLastNode = function () {
     }
     secondlast.next = null;
 }
+
+// delete node by a given key
+
+LinkedList.prototype.deleteByGivenKey = function (key) {
+    if (this.head === null) return
+    if (this.head.data === key) {
+        this.head = this.head.next;
+        return;
+    }
+    let current = this.head;
+    while (current.next != null) {
+        if (current.next.data === key) {
+            current.next = current.next.next;
+            return
+        }
+        current = current.next;
+    }
+}
+
