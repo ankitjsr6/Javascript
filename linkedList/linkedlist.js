@@ -98,3 +98,30 @@ LinkedList.prototype.deleteByGivenKey = function (key) {
     }
 }
 
+
+// search a given element
+
+LinkedList.prototype.searchelement = function (key) {
+    let current = this.head;
+    while (current) {
+        if (current.data === key) {
+            return true;
+        }
+        current = current.next;
+    }
+    return false;
+
+}
+
+
+// traversal
+
+LinkedList.prototype.traversal = function () {
+    let current = this.head
+    let traversal = []
+    while (current) {
+        traversal.push(current.data)
+        current = current.next;
+    }
+    return traversal
+}
