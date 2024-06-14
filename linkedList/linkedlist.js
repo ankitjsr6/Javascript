@@ -114,6 +114,8 @@ LinkedList.prototype.searchelement = function (key) {
 }
 
 
+
+
 // traversal
 
 LinkedList.prototype.traversal = function () {
@@ -124,4 +126,24 @@ LinkedList.prototype.traversal = function () {
         current = current.next;
     }
     return traversal
+}
+
+
+// reversal
+
+LinkedList.prototype.reversal = function () {
+    let current = this.head;
+    let prev = null;
+    let next = null;
+    while (current) {
+        // first move next 
+        next = current.next;
+        // point current to previous point
+        current.next = prev;
+        // move the previous ahead
+        prev = current;
+        // move the current using next
+        current = next;
+    }
+    this.head = prev;
 }
