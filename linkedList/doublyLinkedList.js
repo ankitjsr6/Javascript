@@ -88,3 +88,23 @@ DoublyLinkedList.prototype.deleteLastNode = function () {
         this.tail.next = null;
     }
 }
+
+// reverse DLL
+
+DoublyLinkedList.prototype.reverse = function () {
+    let current = this.head;
+    let temp = null;
+
+    while (current) {
+        temp = current.prev;
+        current.prev = current.next;
+        current.next = temp;
+
+        current = current.prev;
+    }
+    if (temp) {
+        this.head = this.tail;
+        this.tail = temp;
+    }
+
+}
