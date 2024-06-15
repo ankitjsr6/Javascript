@@ -1,0 +1,13 @@
+class BSTNode {
+    constructor(key) {
+        this.key = key;
+        this.right = null;
+        this.left = null;
+    }
+}
+
+class BinarySearchTree {
+    constructor() {
+        this.root = null;
+    }
+}
