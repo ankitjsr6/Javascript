@@ -56,3 +56,35 @@ DoublyLinkedList.prototype.insertAtGivenNode = function (prevNode, data) {
     prevNode.next = newNode;
 
 }
+
+// delete first node
+
+DoublyLinkedList.prototype.deleteFirstNode = function () {
+    if (this.head === null) {
+        return "empty"
+    }
+    if (this.head === this.tail) {
+        this.head = null;
+        this.tail = null;
+    }
+    if (this.head !== this.tail) {
+        this.head = this.head.next;
+        this.head.prev = null;
+    }
+}
+
+// delete last node
+
+DoublyLinkedList.prototype.deleteLastNode = function () {
+    if (this.tail == null) {
+        return "empty"
+    }
+    if (this.head === this.tail) {
+        this.head = null;
+        this.tail = null;
+    }
+    else {
+        this.tail = this.tail.prev;
+        this.tail.next = null;
+    }
+}
