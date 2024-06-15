@@ -27,3 +27,32 @@ DoublyLinkedList.prototype.insertAtBeginning = function (data) {
         this.tail = newNode;
     }
 }
+
+// insert at end
+
+DoublyLinkedList.prototype.insertAtEnd = function (data) {
+    const newNode = new Node(data, null, this.tail);
+
+    if (this.tail !== null) {
+
+    }
+}
+
+// insert at given node
+
+DoublyLinkedList.prototype.insertAtGivenNode = function (prevNode, data) {
+    if (prevNode === null) {
+        return "wrong node"
+    }
+
+    const newNode = new Node(data, prevNode.next, prev);
+
+    if (prevNode.next !== null) {
+        prevNode.next.next = newNode
+    }
+    if (prevNode.next === null) {
+        this.tail = newNode
+    }
+    prevNode.next = newNode;
+
+}
