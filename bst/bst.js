@@ -30,6 +30,43 @@ class BinarySearchTree {
             }
         }
     }
+
+    deleteNode(node, key) {
+        if (node === null) {
+            return null;
+        }
+
+        if (key < node.key) {
+            node.left = this.deleteNode(node.left, key)
+        }
+        if (key > node.key) {
+            node.right = this.deleteNode(node.right, key)
+        }
+        else {
+            if (node.left === null && node.right === null) {
+                return null
+            }
+            else if (node.left === null) {
+                return node.right
+            }
+            else if (node.right === null) {
+                return node.left
+            }
+            else {
+                let tempNode = this.findMinNode(node.right)
+                node.key = tempNode.key
+                node.right = this.deleteNode(node.right, tempNode.key)
+            }
+        }
+        return node;
+    }
+
+    findMinNode(node) {
+        while (node.left !== null) {
+            node = node.left;
+        }
+        return node;
+    }
 }
 
 // insertion in binary search tree
@@ -43,5 +80,11 @@ BinarySearchTree.prototype.insert = function (key) {
     else {
         this.insertAtNode(this.root, newNode);
     }
+}
+
+// deletion in binary search tree
+
+BinarySearchTree.prototype.delete = function (key) {
+    this.root = this.deleteNode(this.root, key)
 }
 
