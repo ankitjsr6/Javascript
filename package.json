@@ -1,0 +1,22 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "DSA",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankitjsr6/Javascript.git"
+  },
+  "author": "Ankit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ankitjsr6/Javascript/issues"
+  },
+  "homepage": "https://github.com/ankitjsr6/Javascript#readme",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
